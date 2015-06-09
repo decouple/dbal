@@ -8,5 +8,8 @@
             "email": "drew@phenocode.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "psr-4": {
+        "Decouple\\DBAL\\": ""
+    }
 }
