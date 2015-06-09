@@ -1,0 +1,12 @@
+{
+    "name": "decouple/dbal",
+    "description": "Hack DBAL written for Decouple Framework.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andrew Ewing",
+            "email": "drew@phenocode.com"
+        }
+    ],
+    "require": {}
+}
