@@ -18,7 +18,7 @@
             "Decouple\\DBAL\\Query": "Query/",
             "Decouple\\DBAL\\Schema": "Schema/",
             "Decouple\\DBAL\\Statement": "Statement/",
-            "Decouple\\DBAL\\Table": "Table/",
+            "Decouple\\DBAL\\Table": "Table/"
         }
     }
 }
