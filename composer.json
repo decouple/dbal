@@ -11,14 +11,15 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "Decouple\\DBAL\\Connector": "Connector/",
-            "Decouple\\DBAL\\Contract": "Contract/",
-            "Decouple\\DBAL\\DPDO": "DPDO/",
-            "Decouple\\DBAL\\Driver": "Driver/",
-            "Decouple\\DBAL\\Query": "Query/",
-            "Decouple\\DBAL\\Schema": "Schema/",
-            "Decouple\\DBAL\\Statement": "Statement/",
-            "Decouple\\DBAL\\Table": "Table/"
+            "Decouple\\DBAL\\Connector\\": "Connector/",
+            "Decouple\\DBAL\\Contract\\": "Contract/",
+            "Decouple\\DBAL\\DPDO\\": "DPDO/",
+            "Decouple\\DBAL\\Driver\\": "Driver/",
+            "Decouple\\DBAL\\Query\\": "Query/",
+            "Decouple\\DBAL\\Schema\\": "Schema/",
+            "Decouple\\DBAL\\Statement\\": "Statement/",
+            "Decouple\\DBAL\\Table\\": "Table/",
+            "Decouple\\DBAL\\": ""
         }
     }
 }
