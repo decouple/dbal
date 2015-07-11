@@ -5,7 +5,7 @@ use Decouple\Common\Contract\DB\TableColumn as TableColumnContract;
 abstract class AbstractTableStructure implements TableStructureContract {
   protected Map<string,TableColumnContract> $columns;
   public function __construct(protected string $name) {
-
+	$this->columns = Map {};
   }
   public function getName() : string {
     return $this->name;
