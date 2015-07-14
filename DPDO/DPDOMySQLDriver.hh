@@ -33,7 +33,6 @@ class DPDOMySQLDriver extends AbstractMySQLDriver {
     return $this->pdo;
   }
   public function schema(string $name) : MySQLSchema {
-    $this->connector()->connection()->query('USE ' . $name);
     return parent::schema($name);
   }
   public function execute(string $query) : bool {

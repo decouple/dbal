@@ -16,6 +16,7 @@ class MySQLSchema implements Schema {
   public function create() : bool {
     $statement = $this->driver->prepare(sprintf('CREATE DATABASE %s', $this->name));
     $res = $statement->execute();
+    $this->connector()->connection()->query(sprintf('USE %s', $this->name));
     return $res ? true : false;
   }
   public function table(string $name) : MySQLTable {
