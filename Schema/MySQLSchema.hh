@@ -14,9 +14,8 @@ class MySQLSchema implements Schema {
     return $count ? true : false;
   }
   public function create() : bool {
-    $statement = $this->driver->prepare(sprintf('CREATE DATABASE %s', $this->name));
-    $res = $statement->execute();
-    $this->connector()->connection()->query(sprintf('USE %s', $this->name));
+    $res = $this->driver()->execute(sprintf('CREATE DATABASE %s', $this->name));
+    $this->driver()->execute(sprintf('USE %s', $this->name));
     return $res ? true : false;
   }
   public function table(string $name) : MySQLTable {
