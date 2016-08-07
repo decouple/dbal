@@ -68,7 +68,8 @@ abstract class AbstractMySQLQuery {
         $value = $vec[2];
         $standIn = ':'.$field;
         if (is_null($value)) {
-          $val = null;
+          $operator = ' IS ';
+          $standIn = 'NULL';
         } elseif (is_array($value)) {
           $val = json_encode($value);
         } elseif ($value instanceof Raw) {

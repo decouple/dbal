@@ -5,7 +5,9 @@ use Decouple\DBAL\Table\MySQLTable;
 use Decouple\Common\Contract\DB\Schema;
 class MySQLSchema implements Schema {
   public function __construct(protected string $name, protected AbstractMySQLDriver $driver) {
-
+    if($this->exists()) {
+      $this->driver()->execute(sprintf('USE %s', $this->name));
+    }
   }
   public function exists() : bool {
     $statement = $this->driver->prepare('SELECT COUNT(1) FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME=?');
@@ -15,7 +17,6 @@ class MySQLSchema implements Schema {
   }
   public function create() : bool {
     $res = $this->driver()->execute(sprintf('CREATE DATABASE %s', $this->name));
-    $this->driver()->execute(sprintf('USE %s', $this->name));
     return $res ? true : false;
   }
   public function table(string $name) : MySQLTable {

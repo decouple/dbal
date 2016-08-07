@@ -54,12 +54,14 @@ abstract class AbstractTableStructure implements TableStructureContract {
   }
   public function softDeletes(bool $value=true) : void {
     $deleted_at = new TableColumn('deleted_at', 'timestamp');
+    $deleted_at->setAttribute('nullable', true);
+    $deleted_at->setAttribute('default', 'NULL');
     $this->columns['deleted_at'] = $deleted_at;
   }
   public function timestamps(bool $value=true) : void {
     $created_at = new TableColumn('created_at', 'timestamp');
     $this->columns['created_at'] = $created_at;
-  $updated_at = new TableColumn('updated_at', 'timestamp');
+    $updated_at = new TableColumn('updated_at', 'timestamp');
     $this->columns['updated_at'] = $updated_at;
   }
   public function addColumn(TableColumnContract $column) : void {

@@ -18,7 +18,7 @@ class MySQLTableStructure extends AbstractTableStructure
 
     if ($column->getAttribute('default')) {
       $value = $column->getAttribute('default');
-      if (is_string($value) &&
+      if (is_string($value) && $value != 'NULL' &&
           (substr($value, 0, 1) !== '`' || substr($value, -1, 1) !== '`')) {
         $value = "'".(string) addslashes($value)."'";
       } else {
@@ -47,6 +47,9 @@ class MySQLTableStructure extends AbstractTableStructure
       );
     } else if ($type == "timestamp") {
       $ctype = "TIMESTAMP";
+      if(!$column->hasAttribute('default')) {
+        $extras[] = 'default NOW()';
+      }
     } else if ($type == 'foreign') {
       $ctype = 'INT(14) UNSIGNED';
     }
