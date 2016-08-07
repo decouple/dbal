@@ -69,7 +69,7 @@ abstract class AbstractMySQLQuery {
         $standIn = ':'.$field;
         if (is_null($value)) {
           $operator = ' IS ';
-          $standIn = 'NULL';
+          $val = $standIn = 'NULL';
         } elseif (is_array($value)) {
           $val = json_encode($value);
         } elseif ($value instanceof Raw) {
